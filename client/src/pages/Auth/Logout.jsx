@@ -12,7 +12,7 @@ const Logout = () => {
       try 
       {
         const res = await axios.post(
-          `http://localhost:8000/api/v1/logout`,
+          `https://e-commerse-1-61im.onrender.com/api/v1/logout`,
         );
         if (res.data.message) {
           toast.success(res.data.message);

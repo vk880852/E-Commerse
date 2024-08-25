@@ -9,7 +9,7 @@ const useCategory = () => {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/api/v1/category');
+                const response = await axios.get('https://e-commerse-1-61im.onrender.com/api/v1/category');
                 if (response.data.message === 'All Category is Found') {
                     setCategories(response.data.category);
                 } else {

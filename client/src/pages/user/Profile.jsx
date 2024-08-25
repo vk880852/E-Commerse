@@ -13,7 +13,7 @@ const Profile = () => {
 
   const getData = async () => {
     try {
-      const data1 = await axios.get("http://localhost:8000/api/v1/get-user-information");
+      const data1 = await axios.get("https://e-commerse-1-61im.onrender.com/api/v1/get-user-information");
       setFormData(data1.data.user);
     } catch (error) {
       console.log(error);

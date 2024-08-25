@@ -26,7 +26,7 @@ const CreateProduct = () => {
 
   const getallcategory = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/api/v1/category`);
+      const res = await axios.get(`https://e-commerse-1-61im.onrender.com/api/v1/category`);
       if (res.data.message === 'All Category is Found') {
         setAllcategory(res.data.category);
       }
@@ -47,7 +47,7 @@ const CreateProduct = () => {
       for (let key in formData) {
         formDataToSend.append(key, formData[key]);
       }
-      const res = await axios.post("http://localhost:8000/api/v1/upload", formDataToSend);
+      const res = await axios.post("https://e-commerse-1-61im.onrender.com/api/v1/upload", formDataToSend);
       toast.success('Product created successfully');
     } catch (error) {
       console.error("Error:", error);

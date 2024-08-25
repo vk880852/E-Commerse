@@ -21,7 +21,7 @@ const HomePage = () => {
   // Function to fetch total product count
   const getTotal = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/api/v1/product-count`);
+      const res = await axios.get(`https://e-commerse-1-61im.onrender.com/api/v1/product-count`);
       setTotal(res.data.product); // Assuming the response structure has a property 'productCount'
     } catch (error) {
       console.error("Error while fetching total product count:", error);
@@ -33,7 +33,7 @@ const HomePage = () => {
   const loadMore = async () => {
     try {
       setLoading(true);
-      const res = await axios.get(`http://localhost:8000/api/v1/product-list/${page}`);
+      const res = await axios.get(`https://e-commerse-1-61im.onrender.com/api/v1/product-list/${page}`);
       setProduct([...product, ...res.data.products]); 
       setLoading(false);
     } catch (error) {
@@ -51,7 +51,7 @@ const HomePage = () => {
   // Function to fetch all products
   const getAllProduct = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/api/v1/product-list/${page}`);
+      const res = await axios.get(`https://e-commerse-1-61im.onrender.com/api/v1/product-list/${page}`);
       setProduct(res.data.products);
     } catch (error) {
       console.error("Error while fetching all products:", error);
@@ -62,7 +62,7 @@ const HomePage = () => {
   // Function to fetch all categories
   const getAllCategory = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/api/v1/category`);
+      const res = await axios.get(`https://e-commerse-1-61im.onrender.com/api/v1/category`);
       if (res.data.message === "All Category is Found") {
         setCategory(res.data.category);
       }
@@ -101,7 +101,7 @@ const HomePage = () => {
   const filter = async () => {
     try {
       const res = await axios.post(
-        `http://localhost:8000/api/v1/product/product-sort`,
+        `https://e-commerse-1-61im.onrender.com/api/v1/product/product-sort`,
         { check, radio }
       );
       setProduct(res.data.product);
@@ -162,7 +162,7 @@ const HomePage = () => {
                 <div key={productItem._id} className="col">
                   <div className="card h-100">
                     <img
-                      src={`http://localhost:8000/api/v1/getphoto/product/${productItem._id}`}
+                      src={`https://e-commerse-1-61im.onrender.com/api/v1/getphoto/product/${productItem._id}`}
                       className="card-img-top"
                       alt={productItem.name}
                     />

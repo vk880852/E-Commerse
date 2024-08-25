@@ -17,7 +17,7 @@ const SearchItem = () => {
           <Col key={productItem._id} xs={24} sm={12} md={8} lg={6}>
             <Card
               hoverable
-              cover={<img alt={productItem.name} src={`http://localhost:8000/api/v1/getphoto/product/${productItem._id}`} />}
+              cover={<img alt={productItem.name} src={`https://e-commerse-1-61im.onrender.com/api/v1/getphoto/product/${productItem._id}`} />}
             >
               <Meta title={productItem.name} description={productItem.description} />
               <div style={{ marginTop: '10px', textAlign: 'center' }}>

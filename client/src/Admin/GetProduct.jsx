@@ -9,7 +9,7 @@ const GetProduct = () => {
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const res = await axios.post("http://localhost:8000/api/v1/allproduct");
+        const res = await axios.post("https://e-commerse-1-61im.onrender.com/api/v1/allproduct");
         console.log(res.data);
         if (res.data.message === 'All Products Fetched') {
           setProduct(res.data.allProducts);
@@ -31,7 +31,7 @@ const GetProduct = () => {
           {product.map((x) => (
             <Link key={x._id} to={`/update-product/${x.slug}`} className="col-md-4 mb-4 d-flex align-items-stretch" style={{ textDecoration: 'none' }}>
               <div className="card h-100">
-                <img src={`http://localhost:8000/api/v1/getphoto/product/${x._id}`} className="card-img-top" alt={x.name} />
+                <img src={`https://e-commerse-1-61im.onrender.com/api/v1/getphoto/product/${x._id}`} className="card-img-top" alt={x.name} />
                 <div className="card-body">
                   <h5 className="card-title text-center">{x.name}</h5>
                   <p className="card-text text-center">

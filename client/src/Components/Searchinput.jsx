@@ -13,7 +13,7 @@ const Searchinput = () => {
     e.preventDefault(); 
 
     try {
-        const res=await axios.get(`http://localhost:8000/api/v1/product/search/${value.keyword}`);
+        const res=await axios.get(`https://e-commerse-1-61im.onrender.com/api/v1/product/search/${value.keyword}`);
         setValue({...value,result:res.data.result});
         navigate("/search-totalItem");
     } catch (error) {

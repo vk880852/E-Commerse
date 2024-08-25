@@ -9,7 +9,7 @@ const Order = () => {
 
   const fetchOrders = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/v1/orders');
+      const response = await axios.get('https://e-commerse-1-61im.onrender.com/api/v1/orders');
       setOrders(response.data);
     } catch (error) {
       console.log("Something went wrong while accessing order data", error);
@@ -56,7 +56,7 @@ const Order = () => {
                       <div className="row mb-3 p-3 border rounded" key={product._id}>
                         <div className="col-md-4">
                           <img
-                            src={`http://localhost:8000/api/v1/getphoto/product/${product._id}`}
+                            src={`https://e-commerse-1-61im.onrender.com/api/v1/getphoto/product/${product._id}`}
                             className="card-img-top img-fluid"
                             alt={product.name}
                           />

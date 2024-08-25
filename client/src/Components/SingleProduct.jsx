@@ -18,7 +18,7 @@ const SingleProduct = () => {
     setLoading(true);
     try {
       const res = await axios.get(
-        `http://localhost:8000/api/v1/getsingleproduct/${slug}`
+        `https://e-commerse-1-61im.onrender.com/api/v1/getsingleproduct/${slug}`
       );
       setSingleProduct([res.data.product]);
       if (res.data.product) {
@@ -35,7 +35,7 @@ const SingleProduct = () => {
     setLoading(true);
     try {
       const res = await axios.get(
-        `http://localhost:8000/api/v1/product/similar-product/${pId}/${cId}`
+        `https://e-commerse-1-61im.onrender.com/api/v1/product/similar-product/${pId}/${cId}`
       );
       setRelatedProduct(res.data.similarProducts);
     } catch (error) {
@@ -65,7 +65,7 @@ const SingleProduct = () => {
             <div className="row">
             <div className="col-md-6">
               <img
-                src={`http://localhost:8000/api/v1/getphoto/product/${x._id}`}
+                src={`https://e-commerse-1-61im.onrender.com/api/v1/getphoto/product/${x._id}`}
                 className="img-fluid rounded card-img-top"
                 alt={x.name}
               />
@@ -115,7 +115,7 @@ const SingleProduct = () => {
                 <div key={product._id} className="col-md-4 mb-3">
                   <div className="card">
                     <img
-                      src={`http://localhost:8000/api/v1/getphoto/product/${product._id}`}
+                      src={`https://e-commerse-1-61im.onrender.com/api/v1/getphoto/product/${product._id}`}
                       className="card-img-top"
                       alt={product.title}
                     />

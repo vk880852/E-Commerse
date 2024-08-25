@@ -9,7 +9,7 @@ const Category = () => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/api/v1/single-category/${slug}`);
+      const res = await axios.get(`https://e-commerse-1-61im.onrender.com/api/v1/single-category/${slug}`);
       setProduct(res.data.product);
     } catch (error) {
       console.log(error);
@@ -28,7 +28,7 @@ const Category = () => {
           <div className="col-md-4 mb-3" key={x._id}>
             <div className="card" style={{ width: '18rem' }}>
               <img
-                src={`http://localhost:8000/api/v1/getphoto/product/${x._id}`}
+                src={`https://e-commerse-1-61im.onrender.com/api/v1/getphoto/product/${x._id}`}
                 className="card-img-top"
                 alt={x.name}
               />

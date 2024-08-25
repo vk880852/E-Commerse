@@ -21,7 +21,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`http://localhost:8000/api/v1/login`, { ...formData });
+      const res = await axios.post(`https://e-commerse-1-61im.onrender.com/api/v1/login`, { ...formData });
       if (res && res.data) {
         toast.success("Successfully Logged in");
         console.log(res.data);

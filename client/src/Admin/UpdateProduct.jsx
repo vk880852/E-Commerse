@@ -30,7 +30,7 @@ const UpdateProduct = () => {
 
   const getAllCategory = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/api/v1/category`);
+      const res = await axios.get(`https://e-commerse-1-61im.onrender.com/api/v1/category`);
       if (res.data.message === "All Category is Found") {
         setAllCategory(res.data.category);
       }
@@ -42,7 +42,7 @@ const UpdateProduct = () => {
 
   const getSingleProduct = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/api/v1/getsingleproduct/${slug}`);
+      const res = await axios.get(`https://e-commerse-1-61im.onrender.com/api/v1/getsingleproduct/${slug}`);
       const product = res.data.product;
       setId(res.data.product._id);
       setFormData({
@@ -74,7 +74,7 @@ const UpdateProduct = () => {
         formDataToSend.append(key, formData[key]);
       }
       const res = await axios.put(
-        `http://localhost:8000/api/v1/product/update-product/${pId}`,
+        `https://e-commerse-1-61im.onrender.com/api/v1/product/update-product/${pId}`,
         formDataToSend
       );
       console.log('Product updated successfully');
@@ -89,7 +89,7 @@ const UpdateProduct = () => {
      try {
       let ans=window.prompt("Want to delete Product");
       if(ans.toLowerCase()!=="yes")return ;
-      const res=await axios.post(`http://localhost:8000/api/v1/product/delete-product/${pId}`);
+      const res=await axios.post(`https://e-commerse-1-61im.onrender.com/api/v1/product/delete-product/${pId}`);
       toast.success(res.data.message);
      } catch (error) {
          console.log(error);

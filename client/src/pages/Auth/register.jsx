@@ -30,7 +30,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        `http://localhost:8000/api/v1/register`,
+        `https://e-commerse-1-61im.onrender.com/api/v1/register`,
         formData
       );
       toast.success("Register Successful");

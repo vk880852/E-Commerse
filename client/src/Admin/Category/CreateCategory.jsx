@@ -14,7 +14,7 @@ const CreateCategory = () => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.put(`http://localhost:8000/api/v1/update-category/${selected._id}`, { updatedName });
+      const res = await axios.put(`https://e-commerse-1-61im.onrender.com/api/v1/update-category/${selected._id}`, { updatedName });
       console.log(res.data);
       if (res.success) {
         toast.success(`Category updated successfully`);
@@ -32,7 +32,7 @@ const CreateCategory = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`http://localhost:8000/api/v1/create-category`, { name });
+      const res = await axios.post(`https://e-commerse-1-61im.onrender.com/api/v1/create-category`, { name });
       toast.success(res.data);
       getallproduct();
     } catch (error) {
@@ -43,7 +43,7 @@ const CreateCategory = () => {
 
   const getallproduct = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/api/v1/category`);
+      const res = await axios.get(`https://e-commerse-1-61im.onrender.com/api/v1/category`);
       toast.success(res.data);
       if (res.data.message === "All Category is Found")
         setAllcategory(res.data.category);
@@ -56,7 +56,7 @@ const CreateCategory = () => {
   const handleDelete = async () => {
     try {
       console.log(selected._id);
-      const res = await axios.post(`http://localhost:8000/api/v1/delete-category/${selected._id}`);
+      const res = await axios.post(`https://e-commerse-1-61im.onrender.com/api/v1/delete-category/${selected._id}`);
       toast.success(res.data);
       console.log(res);
     } catch (error) {
