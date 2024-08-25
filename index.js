@@ -8,7 +8,7 @@ connectDB().then(()=>{
     app.on("error",error=>{
         throw error
     })
-    app.listen(process.env.PORT,()=>{
+    app.listen(process.env.PORT||10000,()=>{
         console.log(`app is listening on ${process.env.PORT}`)
     })
    
