@@ -61,7 +61,7 @@ const Cart = () => {
 
   const fetchClientToken = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:8000/api/v1/braintree/token`);
+      const { data } = await axios.get(`https://e-commerse-1-61im.onrender.com/api/v1/braintree/token`);
       setClientToken(data.clientToken);
     } catch (error) {
       console.log(`Error fetching client token: ${error}`);
@@ -82,7 +82,7 @@ const Cart = () => {
   const handlePayment = async() => {
      try {
       const {nonce}=await instance.requestPaymentMethod();
-      const {data}=await axios.post(`http://localhost:8000/api/v1/braintree/payment`,{nonce,cart});
+      const {data}=await axios.post(`https://e-commerse-1-61im.onrender.com/api/v1/braintree/payment`,{nonce,cart});
       console.log(`handle payment data ${data}`);
       localStorage.removeItem('cart');
       setCart([]);
@@ -107,7 +107,7 @@ const Cart = () => {
               <div key={item[0]._id} className='row mb-3'>
                 <div className='col-md-4'>
                   <img
-                    src={`http://localhost:8000/api/v1/getphoto/product/${item[0]._id}`}
+                    src={`https://e-commerse-1-61im.onrender.com/api/v1/getphoto/product/${item[0]._id}`}
                     className="card-img-top"
                     alt={item[0].name}
                   />
